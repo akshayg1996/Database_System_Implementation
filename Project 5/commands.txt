@@ -1,0 +1,12 @@
+
+SET OUTPUT STDOUT;
+
+CREATE TABLE test_table (id INTEGER, name STRING) AS HEAP;
+
+INSERT 'file.txt' INTO test_table;
+
+DROP TABLE test_table;
+
+CREATE TABLE test_table (id INTEGER, name STRING) AS SORTED ON id,name;
+
+DROP TABLE test_table;
